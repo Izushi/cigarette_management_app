@@ -99,7 +99,7 @@ document.addEventListener('turbolinks:load', () => {
       let weightData = {
         labels: dates,
         datasets: [{
-          label: '体重(kg)',
+          label: 'タバコ(本)',
           data: weights,
           backgroundColor: 'rgba(255, 99, 132, 0.2)',
           borderColor: 'rgba(255, 99, 132, 1)',
@@ -116,7 +116,7 @@ document.addEventListener('turbolinks:load', () => {
               return tooltipItems[0].xLabel.replace(/^(\d+).(\d+)$/, ' $1 月 $2 日')
             },
             label: function (tooltipItem) {
-              return '体重: ' + tooltipItem.yLabel + 'kg'
+              return 'タバコ: ' + tooltipItem.yLabel + '本'
             }
           }
         }
