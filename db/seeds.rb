@@ -10,9 +10,8 @@ END_DATE = Date.today + 1.months
 NO_RECORD_CONSTANT = 5
 
 # 記録する体重の範囲（乱数で値を決める都合上，10倍しておく）
-MIN_WEIGHT = 600
-MAX_WEIGHT = 620
-DIV_CONSTANT = 10
+MIN_CIGARETTE = 0
+MAX_CIGARETTE = 20
 
 user = User.find_or_create_by!(email: EMAIL) do |user|
   user.password = PASSWORD
@@ -29,8 +28,8 @@ graphs = []
     user_id: user.id,
     date: date,
     # to_f を入れておかないと整数になるので注意！
-    weight: rand(MIN_WEIGHT..MAX_WEIGHT).to_f / DIV_CONSTANT,
+    weight: rand(MIN_CIGARETTE..MAX_CIGARETTE),
   }
 end
 Graph.create!(graphs)
-puts "体重の初期データ投入に成功しました！"
+puts "喫煙本数の初期データ投入に成功しました！"
