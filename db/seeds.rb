@@ -9,7 +9,7 @@ END_DATE = Date.today + 1.months
 # （記録が一部欠けていてもグラフが正常に描けるかをチェックするため）
 NO_RECORD_CONSTANT = 5
 
-# 記録する体重の範囲（乱数で値を決める都合上，10倍しておく）
+# 記録する喫煙本数の範囲
 MIN_CIGARETTE = 0
 MAX_CIGARETTE = 20
 
@@ -27,8 +27,7 @@ graphs = []
   graphs << {
     user_id: user.id,
     date: date,
-    # to_f を入れておかないと整数になるので注意！
-    weight: rand(MIN_CIGARETTE..MAX_CIGARETTE),
+    cigarette: rand(MIN_CIGARETTE..MAX_CIGARETTE),
   }
 end
 Graph.create!(graphs)
