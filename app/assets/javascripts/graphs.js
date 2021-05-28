@@ -94,13 +94,13 @@ document.addEventListener('turbolinks:load', () => {
       })
 
       // 体重のみのデータを作成
-      let weights = records.map((record) => record.weight)
+      let cigarettes = records.map((record) => record.cigarette)
 
       let weightData = {
         labels: dates,
         datasets: [{
           label: 'タバコ(本)',
-          data: weights,
+          data: cigarettes,
           backgroundColor: 'rgba(255, 99, 132, 0.2)',
           borderColor: 'rgba(255, 99, 132, 1)',
           borderWidth: 1,
