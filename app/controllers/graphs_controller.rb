@@ -1,6 +1,6 @@
 class GraphsController < ApplicationController
   def index
-    gon.weight_records = Graph.chart_data(current_user)
+    gon.cigarette_records = Graph.chart_data(current_user)
     # 記録済みの日付データ
     gon.recorded_dates = current_user.graphs.map(&:date)
   end
