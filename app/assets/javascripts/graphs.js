@@ -51,7 +51,7 @@ document.addEventListener('turbolinks:load', () => {
     // 編集モーダルで日付を選択したときに，記録された体重を表示する関数
     const editCalendar = document.getElementById('edit-calendar')
     const editCigarette = document.getElementById('edit-cigarette')
-    const inputWeight = () => {
+    const inputCigarette = () => {
       let record = gon.cigarette_records.find((record) => record.date === editCalendar.value)
       editCigarette.value = record.cigarette
     }
@@ -63,7 +63,10 @@ document.addEventListener('turbolinks:load', () => {
       enable: gon.recorded_dates,
       // 記録が無い場合は日付を選択できないようにする
       noCalendar: gon.recorded_dates.length === 0,
-      onChange: inputWeight
+      onChange: inputCigarette
+
+
+
     })
 
     const TODAY = convertDate(new Date())
@@ -73,10 +76,10 @@ document.addEventListener('turbolinks:load', () => {
     const THREE_MONTHS_AGO = new Date(TODAY.getFullYear(), TODAY.getMonth() - 3, TODAY.getDate() + 1)
 
     // グラフを描く場所を取得
-    const chartWeightContext = document.getElementById("chart-weight").getContext('2d')
+    const chartCigaretteContext = document.getElementById("chart-cigarette").getContext('2d')
 
     // グラフ（ drawGraph 関数の外で変数宣言をしなければならない!）
-    let chartWeight
+    let chartCigarette
 
     // 期間を指定してグラフを描く
     const drawGraph = (from, to) => {
@@ -96,7 +99,7 @@ document.addEventListener('turbolinks:load', () => {
       // 体重のみのデータを作成
       let cigarettes = records.map((record) => record.cigarette)
 
-      let weightData = {
+      let cigaretteData = {
         labels: dates,
         datasets: [{
           label: 'タバコ(本)',
@@ -108,7 +111,7 @@ document.addEventListener('turbolinks:load', () => {
         }]
       }
 
-      let weightOption = {
+      let cigaretteOption = {
         tooltips: {
           callbacks: {
             // ホバー（スマホならタップ）時のラベル表示を変更
@@ -122,18 +125,18 @@ document.addEventListener('turbolinks:load', () => {
         }
       }
 
-      if (!chartWeight) {
+      if (!chartCigarette) {
         // グラフが存在しないときは，作成する
-        chartWeight = new Chart(chartWeightContext, {
+        chartCigarette = new Chart(chartCigaretteContext, {
           type: 'line',
-          data: weightData,
-          options: weightOption
+          data: cigaretteData,
+          options: cigaretteOption
         })
       } else {
         // グラフが存在するときは，更新する
-        chartWeight.data = weightData
-        chartWeight.options = weightOption
-        chartWeight.update()
+        chartCigarette.data = cigaretteData
+        chartCigarette.options = cigaretteOption
+        chartCigarette.update()
       }
     }
 
