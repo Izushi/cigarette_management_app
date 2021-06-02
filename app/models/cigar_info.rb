@@ -1,0 +1,2 @@
+class CigarInfo < ApplicationRecord
+end
