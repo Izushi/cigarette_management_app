@@ -1,5 +1,6 @@
 class CigarInfosController < ApplicationController
   def index
+    @cigarinfos = CigarInfo.order(id: :asc)
   end
 
   def show
