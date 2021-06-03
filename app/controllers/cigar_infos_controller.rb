@@ -23,6 +23,9 @@ class CigarInfosController < ApplicationController
   end
 
   def destroy
+    cigarinfo = CigarInfo.find(params[:id])
+    cigarinfo.destroy!
+    redirect_to cigar_infos_path
   end
 
   private
