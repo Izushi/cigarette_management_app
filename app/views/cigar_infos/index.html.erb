@@ -1,2 +1,23 @@
-<h1>CigarInfos#index</h1>
-<p>Find me in app/views/cigar_infos/index.html.erb</p>
+<h1>タバコ情報一覧</h1>
+<table>
+  <thead>
+    <tr>
+      <th scope="col">No.</th>
+      <th scope="col">銘柄</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cigarinfos.each.with_index(1) do |cigarinfo, i| %>
+      <tr>
+        <th scope="row"><%= i %></th>
+        <td><%= cigarinfo.brand %></td>
+        <td>
+          <%= link_to "詳細", cigarinfo %>
+          <%= link_to "編集", edit_cigar_info_path(cigarinfo) %>
+          <%= link_to "削除", cigarinfo, method: :delete, data: { confirm: "削除しますか?" } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
