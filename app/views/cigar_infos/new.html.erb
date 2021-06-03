@@ -1,2 +1,18 @@
-<h1>CigarInfos#new</h1>
-<p>Find me in app/views/cigar_infos/new.html.erb</p>
+<h1>タバコ情報登録</h1>
+<%= form_with model: @cigarinfo, local: true do |form| %>
+  <div>
+    <%= form.label :brand, "銘柄" %>
+    <%= form.text_field :brand %>
+  </div>
+  <div>
+    <%= form.label :price, "値段" %>
+    <%= form.text_field :price %>
+  </div>
+  <div>
+    <%= form.label :text, "内容" %>
+    <%= form.text_area :text %>
+  </div>
+  <div>
+    <%= form.submit "送信" %>
+  </div>
+<% end %>
