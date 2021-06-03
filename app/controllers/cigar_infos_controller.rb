@@ -17,9 +17,13 @@ class CigarInfosController < ApplicationController
   end
 
   def edit
+    @cigarinfo = CigarInfo.find(params[:id])
   end
 
   def update
+    cigarinfo = CigarInfo.find(params[:id])
+    cigarinfo.update!(cigarinfo_params)
+    redirect_to cigarinfo
   end
 
   def destroy
