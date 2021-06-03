@@ -3,6 +3,7 @@ class CigarInfosController < ApplicationController
   end
 
   def show
+    @cigarinfo = CigarInfo.find(params[:id])
   end
 
   def new
@@ -11,7 +12,7 @@ class CigarInfosController < ApplicationController
 
   def create
     cigarinfo = CigarInfo.create!(cigarinfo_params)
-    redirect_to cigar_info_path
+    redirect_to cigar_info_path(cigarinfo)
   end
 
   def edit
