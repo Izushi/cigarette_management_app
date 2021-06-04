@@ -14,7 +14,7 @@ class CigarInfosController < ApplicationController
 
   def create
     cigarinfo = CigarInfo.create!(cigarinfo_params)
-    redirect_to cigar_info_path(cigarinfo)
+    redirect_to cigar_info_path(cigarinfo), notice: "登録しました" #createアクションで定義した変数cigarinfo
   end
 
   def edit
@@ -22,12 +22,12 @@ class CigarInfosController < ApplicationController
 
   def update
     @cigarinfo.update!(cigarinfo_params)
-    redirect_to @cigarinfo
+    redirect_to cigar_info_path(@cigarinfo), notice: "更新しました"
   end
 
   def destroy
     @cigarinfo.destroy!
-    redirect_to cigar_infos_path
+    redirect_to cigar_infos_path, alert: "削除しました"
   end
 
   private
