@@ -1,10 +1,11 @@
 class CigarInfosController < ApplicationController
+  before_action :set_cigarinfo, only: [:show, :edit, :update, :destroy]
+
   def index
     @cigarinfos = CigarInfo.order(id: :asc)
   end
 
   def show
-    @cigarinfo = CigarInfo.find(params[:id])
   end
 
   def new
@@ -17,22 +18,23 @@ class CigarInfosController < ApplicationController
   end
 
   def edit
-    @cigarinfo = CigarInfo.find(params[:id])
   end
 
   def update
-    cigarinfo = CigarInfo.find(params[:id])
-    cigarinfo.update!(cigarinfo_params)
-    redirect_to cigarinfo
+    @cigarinfo.update!(cigarinfo_params)
+    redirect_to @cigarinfo
   end
 
   def destroy
-    cigarinfo = CigarInfo.find(params[:id])
-    cigarinfo.destroy!
+    @cigarinfo.destroy!
     redirect_to cigar_infos_path
   end
 
   private
+
+  def set_cigarinfo
+    @cigarinfo = CigarInfo.find(params[:id])
+  end
 
   def cigarinfo_params
     params.require(:cigar_info).permit(:brand, :price, :text)

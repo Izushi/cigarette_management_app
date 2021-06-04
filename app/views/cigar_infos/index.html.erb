@@ -4,6 +4,7 @@
     <tr>
       <th scope="col">No.</th>
       <th scope="col">銘柄</th>
+      <th scope="col">値段</th>
       <th scope="col"></th>
     </tr>
   </thead>
@@ -12,6 +13,7 @@
       <tr>
         <th scope="row"><%= i %></th>
         <td><%= cigarinfo.brand %></td>
+        <td><%= cigarinfo.price %>円</td>
         <td>
           <%= link_to "詳細", cigarinfo %>
           <%= link_to "編集", edit_cigar_info_path(cigarinfo) %>
