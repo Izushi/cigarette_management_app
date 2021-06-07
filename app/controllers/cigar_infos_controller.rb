@@ -13,16 +13,25 @@ class CigarInfosController < ApplicationController
   end
 
   def create
-    cigarinfo = CigarInfo.create!(cigarinfo_params)
-    redirect_to cigar_info_path(cigarinfo), notice: "登録しました" #createアクションで定義した変数cigarinfo
+    @cigarinfo = CigarInfo.new(cigarinfo_params)
+    if @cigarinfo.save
+      redirect_to cigar_info_path(@cigarinfo), notice: "登録しました" #createアクションで定義した変数cigarinfo
+    else
+      flash.now[:alert] = "登録に失敗しました"
+      render :new
+    end
   end
 
   def edit
   end
 
   def update
-    @cigarinfo.update!(cigarinfo_params)
-    redirect_to cigar_info_path(@cigarinfo), notice: "更新しました"
+    if @cigarinfo.update(cigarinfo_params)
+      redirect_to @cigarinfo, notice: "更新しました"
+    else
+      flash.now[:alert] = "更新に失敗しました"
+      render :edit
+    end
   end
 
   def destroy
