@@ -1,14 +1,15 @@
+<%= render "layouts/error_messages" %>
 <%= form_with model: @cigarinfo, local: true do |form| %>
   <div>
-    <%= form.label :brand, "銘柄" %>
+    <%= form.label :brand %>
     <%= form.text_field :brand %>
   </div>
   <div>
-    <%= form.label :price, "値段" %>
+    <%= form.label :price %>
     <%= form.text_field :price %>
   </div>
   <div>
-    <%= form.label :text, "レビュー" %>
+    <%= form.label :text %>
     <%= form.text_area :text %>
   </div>
   <div>

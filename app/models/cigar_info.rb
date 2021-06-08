@@ -1,4 +1,5 @@
 class CigarInfo < ApplicationRecord
   validates :brand, presence: true, length: { maximum: 50 }
-  validates :text, presence: true, length: { maximum: 200 }
+  validates :price, presence: true
+  validates :text, length: { maximum: 200 }
 end
