@@ -8,10 +8,10 @@
 @import "font-awesome";
 
 // 全体
-.graph-container {
+.base-container {
   @extend .container-fluid;
-  max-width: 768px;
-  padding: 1rem;
+  max-width: var(--breakpoint-lg);
+  padding: 30px 15px;
 }
 
 // フラッシュ
