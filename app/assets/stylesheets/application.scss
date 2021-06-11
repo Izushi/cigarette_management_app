@@ -8,13 +8,24 @@
 @import "font-awesome";
 
 // 全体
-.graph-container {
+.base-container {
   @extend .container-fluid;
-  max-width: 768px;
-  padding: 1rem;
+  max-width: var(--breakpoint-lg);
+  padding: 30px 15px;
+}
+
+// テーブル
+th,
+td {
+  vertical-align: middle !important;
+}
+
+.break-word {
+  word-break: break-word;
 }
 
 // フラッシュ
+
 div.alert-notice {
   @extend .alert-info;
 }
@@ -33,7 +44,8 @@ button.close {
 div.field_with_errors {
   display: contents;
 
-  input {
-    border: 2px solid red;
+  input,
+  textarea {
+    @extend .is-invalid;
   }
 }
