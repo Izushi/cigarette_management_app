@@ -14,7 +14,18 @@
   padding: 30px 15px;
 }
 
+// テーブル
+th,
+td {
+  vertical-align: middle !important;
+}
+
+.break-word {
+  word-break: break-word;
+}
+
 // フラッシュ
+
 div.alert-notice {
   @extend .alert-info;
 }
