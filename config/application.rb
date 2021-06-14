@@ -33,5 +33,7 @@ module CigaretteManagementApp
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    # 画像のアップロードでエラーが出ないように
+    config.autoload_paths += Dir[Rails.root.join("app", "uploaders")]
   end
 end

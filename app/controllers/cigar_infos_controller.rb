@@ -46,6 +46,6 @@ class CigarInfosController < ApplicationController
   end
 
   def cigarinfo_params
-    params.require(:cigar_info).permit(:brand, :price, :text)
+    params.require(:cigar_info).permit(:brand, :price, :text, :img)
   end
 end
