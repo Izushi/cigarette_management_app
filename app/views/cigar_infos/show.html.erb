@@ -4,6 +4,7 @@
     <h4><%= @cigarinfo.brand %></h4>
   </div>
   <div class="card-body">
+    <p><%= image_tag @cigarinfo.img.url if @cigarinfo.img? %></p>
     <h5><%= @cigarinfo.price %>円</h5>
     <p class="card-text"><%= simple_format(h @cigarinfo.text)%></p>
   </div>
