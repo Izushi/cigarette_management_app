@@ -35,8 +35,13 @@ class ImgUploader < CarrierWave::Uploader::Base
 
   # Add an allowlist of extensions which are allowed to be uploaded.
   # For images you might use something like this:
-  # def extension_allowlist
-  #   %w(jpg jpeg gif png)
+  # 投稿できるファイル形式を制限する
+  def extension_white_list
+    %w(jpg jpeg png)
+  end
+
+  # def size_range
+  #   1..5.megabytes
   # end
 
   # Override the filename of the uploaded files:
