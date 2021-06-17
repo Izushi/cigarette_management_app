@@ -2,7 +2,7 @@
 <table class="table table-borderd table-striped mt-4">
   <thead class="table-primary">
     <tr>
-      <th scope="col">No.</th>
+      <th scope="col"></th>
       <th scope="col" class="w-30">銘柄</th>
       <th scope="col" class="w-20">値段</th>
       <th scope="col"></th>
@@ -11,7 +11,7 @@
   <tbody>
     <% @cigarinfos.each.with_index(1) do |cigarinfo, i| %>
       <tr>
-        <th scope="row" class="text-center"><%= i %></th>
+        <th scope="row" class="text-center"><%= image_tag cigarinfo.img.url, class:'icon' if cigarinfo.img? %></th>
         <td class="break-word"><%= cigarinfo.brand %></td>
         <td class="break-word"><%= cigarinfo.price %>円</td>
         <td class="text-right">

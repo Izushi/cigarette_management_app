@@ -8,6 +8,7 @@ ja:
         brand: 銘柄
         price: 値段
         text: メモ
+        img: 画像
     errors:
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"

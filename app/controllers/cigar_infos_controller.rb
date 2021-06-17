@@ -15,7 +15,7 @@ class CigarInfosController < ApplicationController
   def create
     @cigarinfo = CigarInfo.new(cigarinfo_params)
     if @cigarinfo.save
-      redirect_to cigar_info_path(@cigarinfo), notice: "登録しました" #createアクションで定義した変数cigarinfo
+      redirect_to cigar_info_path(@cigarinfo), notice: "登録しました" #createアクションで定義した変数@cigarinfo
     else
       flash.now[:alert] = "登録に失敗しました"
       render :new
@@ -46,6 +46,6 @@ class CigarInfosController < ApplicationController
   end
 
   def cigarinfo_params
-    params.require(:cigar_info).permit(:brand, :price, :text)
+    params.require(:cigar_info).permit(:brand, :price, :text, :img, :remove_img)
   end
 end
