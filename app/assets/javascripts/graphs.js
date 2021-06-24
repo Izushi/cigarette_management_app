@@ -96,7 +96,7 @@ document.addEventListener('turbolinks:load', () => {
         return record.date.replace(/^\d+-0*(\d+)-0*(\d+)$/, '$1/$2')
       })
 
-      // 体重のみのデータを作成
+      // タバコのみのデータを作成
       let cigarettes = records.map((record) => record.cigarette)
 
       let cigaretteData = {
@@ -128,7 +128,7 @@ document.addEventListener('turbolinks:load', () => {
       if (!chartCigarette) {
         // グラフが存在しないときは，作成する
         chartCigarette = new Chart(chartCigaretteContext, {
-          type: 'line',
+          type: 'bar',
           data: cigaretteData,
           options: cigaretteOption
         })
