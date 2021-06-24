@@ -2,18 +2,18 @@ class CigarInfosController < ApplicationController
   before_action :set_cigarinfo, only: [:show, :edit, :update, :destroy]
 
   def index
-    @cigarinfos = CigarInfo.order(id: :asc)
+    @cigarinfos = current_user.cigar_infos.order(id: :asc)
   end
 
   def show
   end
 
   def new
-    @cigarinfo = CigarInfo.new
+    @cigarinfo = current_user.cigar_infos.new
   end
 
   def create
-    @cigarinfo = CigarInfo.new(cigarinfo_params)
+    @cigarinfo = current_user.cigar_infos.new(cigarinfo_params)
     if @cigarinfo.save
       redirect_to cigar_info_path(@cigarinfo), notice: "登録しました" #createアクションで定義した変数@cigarinfo
     else
@@ -42,7 +42,7 @@ class CigarInfosController < ApplicationController
   private
 
   def set_cigarinfo
-    @cigarinfo = CigarInfo.find(params[:id])
+    @cigarinfo = current_user.cigar_infos.find(params[:id])
   end
 
   def cigarinfo_params

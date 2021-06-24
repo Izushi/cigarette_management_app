@@ -1,6 +1,6 @@
 class CigarInfo < ApplicationRecord
   belongs_to :user
-  validates :img, presence: true
+  # validates :img, presence: true
   validate :img_size
   validates :brand, presence: true, length: { maximum: 50 }
   validates :price, presence: true
