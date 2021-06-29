@@ -3,29 +3,27 @@
   <thead class="table-primary">
     <tr>
       <th scope="col"></th>
-      <th scope="col" class="w-30">銘柄</th>
-      <th scope="col" class="w-20">値段</th>
+      <th scope="col" class="w-50">タバコ銘柄</th>
+      <th scope="col" class="w-40">価格</th>
       <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
     <% @cigarinfos.each.with_index(1) do |cigarinfo, i| %>
       <tr>
-        <th scope="row" class="text-center"><%= image_tag cigarinfo.img.url, class:'icon' if cigarinfo.img? %></th>
-        <td class="break-word"><%= cigarinfo.brand %></td>
+        <td scope="row" class="text-center"><%= image_tag cigarinfo.img.url, class:'icon' if cigarinfo.img? %></td>
+        <td class="break-word"><%= link_to cigarinfo.brand, cigarinfo %></td>
         <td class="break-word"><%= cigarinfo.price %>円</td>
         <td class="text-right">
-          <%= link_to cigarinfo, class: "btn btn-primary" do %>
-            <i class="fas fa-envelope-open-text"></i> <span class="d-none d-md-inline"> 詳細</span>
-          <% end %>
-          <%= link_to edit_cigar_info_path(cigarinfo), class: "btn btn-success" do %>
-            <i class="far fa-edit"></i> <span class="d-none d-md-inline"> 編集</span>
-          <% end %>
-          <%= link_to cigarinfo, method: :delete, data: { confirm: "削除しますか?" }, class: "btn btn-danger" do %>
-            <i class="far fa-trash-alt"></i> <span class="d-none d-md-inline"> 削除</span>
+          <%= link_to cigarinfo, method: :delete, data: { confirm: "削除しますか?" } do %>
+            <i class="far fa-trash-alt trash"></i>
           <% end %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<div class="text-center">
+  <%= link_to '新しいタバコを登録', new_cigar_info_path, class: "btn-create" %>
+</div>

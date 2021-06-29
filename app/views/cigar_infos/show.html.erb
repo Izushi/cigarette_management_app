@@ -1,11 +1,24 @@
 <h1 class="text-center">タバコ情報詳細</h1>
 <section class="card border-dark mt-5">
-  <div class="card-header">
+  <div class="text-center card-header">
     <h4><%= @cigarinfo.brand %></h4>
   </div>
   <div class="card-body">
-    <p><%= image_tag @cigarinfo.img.url, class:'pic' if @cigarinfo.img? %></p>
-    <h5><%= @cigarinfo.price %>円</h5>
-    <p class="card-text"><%= simple_format(h @cigarinfo.text)%></p>
+    <td>
+      <p><%= image_tag @cigarinfo.img.url, class:'pic' if @cigarinfo.img? %></p>
+      <h5><%= @cigarinfo.price %>円</h5>
+    </td>
+    <td><%= simple_format(@cigarinfo.text) %></td>
+    <%# < class="card-text"><%= simple_format(h @cigarinfo.text)%>
   </div>
 </section>
+
+<br>
+<div class="text-center">
+  <td>
+    <%= link_to 'タバコ情報を編集', edit_cigar_info_path, class: " btn-edit" %>
+  </td>
+  <td>
+    <%= link_to 'タバコ情報を削除', @cigarinfo, method: :delete, data: { confirm: "削除しますか?" }, class: "btn-delete" %>
+  </td>
+</div>
