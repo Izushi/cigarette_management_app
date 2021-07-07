@@ -43,4 +43,7 @@
 <%= render 'modal', action: 'new', title: '新規登録' %>
 <%= render 'modal', action: 'edit', title: '修正' %>
 
-<%= @cigarettes %>
+
+<h3><%= Date.today.month %>月の記録</h3>
+<h3>月間合計<%= @cigarettes %>本</h3>
+<h3>1日平均<%= @cigarettes/cigarettes_this_month.count %></h3>
