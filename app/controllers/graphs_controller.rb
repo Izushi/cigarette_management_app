@@ -1,6 +1,7 @@
 class GraphsController < ApplicationController
+  include GraphsHelper
   def index
-    @cigarettes = current_user.graphs.group_by_month(:date).sum(:cigarette)
+    @cigarettes = sum_cigarette_this_month
     gon.cigarette_records = Graph.chart_data(current_user)
     # 記録済みの日付データ
     gon.recorded_dates = current_user.graphs.map(&:date)
