@@ -1,6 +1,10 @@
 module GraphsHelper
+  def month
+    @month = params[:month] ? Date.parse(params[:month]) : Time.zone.today
+  end
+
   def cigarettes_this_month
-    @cigarettes_this_month = current_user.graphs.where(date: Date.today.in_time_zone.all_month)
+    @cigarettes_this_month = current_user.graphs.where(date: month.all_month)
   end
 
   def sum_cigarette_this_month

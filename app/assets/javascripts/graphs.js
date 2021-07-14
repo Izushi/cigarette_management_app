@@ -48,7 +48,7 @@ document.addEventListener('turbolinks:load', () => {
       defaultDate: 'today',
     })
 
-    // 編集モーダルで日付を選択したときに，記録された体重を表示する関数
+    // 編集モーダルで日付を選択したときに，記録された喫煙本数を表示する関数
     const editCalendar = document.getElementById('edit-calendar')
     const editCigarette = document.getElementById('edit-cigarette')
     const inputCigarette = () => {
@@ -169,6 +169,6 @@ document.addEventListener('turbolinks:load', () => {
     })
 
     // グラフの初期表示
-    drawGraphToToday(A_WEEK_AGO)
+    drawGraphToToday(A_MONTH_AGO)
   }
 })

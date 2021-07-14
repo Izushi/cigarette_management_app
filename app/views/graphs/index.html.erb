@@ -44,6 +44,9 @@
 <%= render 'modal', action: 'edit', title: '修正' %>
 
 
-<h3><%= Date.today.month %>月の記録</h3>
+<h3><%= @month.month %>月の記録</h3>
 <h3>月間合計<%= @cigarettes %>本</h3>
-<h3>1日平均<%= @cigarettes/cigarettes_this_month.count %>本</h3>
+<h3>1日平均<%= @cigarettes/cigarettes_this_month.count%>本</h3>
+
+<%= link_to "前の月のリンク",root_path(month:@month.prev_month) %>
+<%= link_to "次の月のリンク",root_path(month:@month.next_month) %>
