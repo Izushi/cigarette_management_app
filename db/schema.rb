@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_07_201114) do
+ActiveRecord::Schema.define(version: 2021_07_16_035517) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2021_07_07_201114) do
     t.datetime "updated_at", null: false
     t.string "img"
     t.bigint "user_id"
+    t.integer "amount"
     t.index ["user_id"], name: "index_cigar_infos_on_user_id"
   end
 
@@ -34,6 +35,13 @@ ActiveRecord::Schema.define(version: 2021_07_07_201114) do
     t.datetime "updated_at", null: false
     t.index ["user_id", "date"], name: "index_graphs_on_user_id_and_date", unique: true
     t.index ["user_id"], name: "index_graphs_on_user_id"
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.integer "cigar_amount"
+    t.integer "box_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

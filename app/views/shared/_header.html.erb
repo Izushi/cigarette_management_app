@@ -8,8 +8,12 @@
       <ul class="navbar-nav">
         <% if user_signed_in? %>
           <li class="nav-item active">
+            <%= link_to 'プロフィール', profiles_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item active">
             <%= link_to 'タバコ情報', cigar_infos_path, class: 'nav-link' %>
           </li>
+          
           <li class="nav-item active">
             <%= link_to 'アカウント編集', edit_user_registration_path, class: 'nav-link' %>
           </li>
