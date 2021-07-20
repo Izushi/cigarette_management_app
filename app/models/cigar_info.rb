@@ -3,7 +3,7 @@ class CigarInfo < ApplicationRecord
   # validates :img, presence: true
   validate :img_size
   validates :brand, presence: true, length: { maximum: 50 }
-  validates :price, presence: true
+  validates :price, presence: true, numericality: { only_integer: true }
   validates :text, length: { maximum: 200 }
 
   mount_uploader :img, ImgUploader

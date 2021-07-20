@@ -1,13 +1,16 @@
 <h1 class="text-center">プロフィール</h1>
-
+<br>
 <% if @profile.present? %>
-  現在吸っているタバコは一箱 <%= @profile.box_price %>円です
-  普段の喫煙本数は1日に<%= @profile.cigar_amount %>本です
+  <h3>現在吸っているタバコは一箱 <%= @profile.box_price %>円です</h3>
+  <h3>普段の喫煙本数は1日に<%= @profile.cigar_amount %>本です</h3>
+  <br>
   <div class="text-center">
-    <%= link_to 'プロフィールを編集', edit_profile_path(@profile), class: "btn-create" %>
-  </div>
-  <div class="text-center">
-    <%= link_to 'プロフィールを削除', @profile, method: :delete, data: { confirm: "削除しますか？"}, class: "btn-create" %>
+    <td>
+      <%= link_to 'プロフィールを編集', edit_profile_path(@profile), class: " btn-edit" %>
+    </td>
+    <td>
+      <%= link_to 'プロフィールを削除', @profile, method: :delete, data: { confirm: "削除しますか?" }, class: "btn-delete" %>
+    </td>
   </div>
 <% else %>
   普段の喫煙量を登録しましょう

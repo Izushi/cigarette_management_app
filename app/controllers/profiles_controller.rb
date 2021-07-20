@@ -1,4 +1,6 @@
 class ProfilesController < ApplicationController
+  before_action :set_profile, only: %i[edit update destroy]
+
   def index
     @profile = Profile.last
   end
@@ -8,29 +10,39 @@ class ProfilesController < ApplicationController
   end
 
   def create
-    profile = Profile.create!(profile_params)
-    redirect_to profiles_path
+    @profile = Profile.new(profile_params)
+    if @profile.save
+      redirect_to profiles_path, notice: "登録しました"
+    else
+      flash.now[:alert] = "登録に失敗しました"
+      render :new
+    end
   end
 
   def edit
-    @profile = Profile.find(params[:id])
   end
 
   def update
-    profile = Profile.find(params[:id])
-    profile.update!(profile_params)
-    redirect_to profiles_path
+    if @profile.update(profile_params)
+      redirect_to profiles_path, notice: "更新しました"
+    else
+      flash.now[:alert] = "更新に失敗しました"
+      render :edit
+    end
   end
 
   def destroy
-    profile = Profile.find(params[:id])
-    profile.destroy!
-    redirect_to profiles_path
+    @profile.destroy!
+    redirect_to profiles_path, alert: "削除しました"
   end
 
   private
 
   def profile_params
     params.require(:profile).permit(:cigar_amount, :box_price)
+  end
+
+  def set_profile
+    @profile = Profile.find(params[:id])
   end
 end
