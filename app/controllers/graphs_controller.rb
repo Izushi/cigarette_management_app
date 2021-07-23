@@ -2,6 +2,11 @@ class GraphsController < ApplicationController
   include GraphsHelper
   def index
     @cigarettes = sum_cigarette_this_month
+    @average = (@cigarettes.to_f/cigarettes_this_month.count).round
+    @profile = Profile.first
+    # @a_stick_price = @profile.box_price/20
+    @actual_monthly_cost = @cigarettes*@profile.box_price/20
+    @ordinal_monthly_cost = (@profile.box_price/20.to_f*@profile.cigar_amount*cigarettes_this_month.count).to_i
     gon.cigarette_records = Graph.chart_data(current_user)
     # 記録済みの日付データ
     gon.recorded_dates = current_user.graphs.map(&:date)
