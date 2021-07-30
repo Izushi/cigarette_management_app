@@ -2,7 +2,7 @@ class GraphsController < ApplicationController
   include GraphsHelper
   def index
     @cigarettes = sum_cigarette_this_month
-    @average = (@cigarettes.to_f/cigarettes_this_month.count).round
+    @average = (@cigarettes.to_f/cigarettes_this_month.count)
     @profile = Profile.first
     # @a_stick_price = @profile.box_price/20
     @actual_monthly_cost = @cigarettes*@profile.box_price/20
