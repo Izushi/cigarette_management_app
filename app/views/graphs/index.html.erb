@@ -45,10 +45,21 @@
 
 <h3><%= @month.month %>月の記録</h3>
 <h3>月間合計<%= @cigarettes %>本</h3>
-<h3>1日平均<%= @average %>本</h3>
-<h3>今月の出費<%= @actual_monthly_cost %>円</h3>
-<h3>普段の出費<%= @ordinal_monthly_cost %>円</h3>
-<h3>今月節約した金額<%= @ordinal_monthly_cost-@actual_monthly_cost %>円</h3>
+
+<% if @average.nan? %>
+  <h3>1日平均0本</h3>
+<% else %>
+  <h3>1日平均<%= @average %>本</h3>
+<% end %>
+
+<% if @profile.nil? %>
+  
+<% else %>
+  <h3>今月の出費<%= @actual_monthly_cost %>円</h3>
+  <h3>普段の出費<%= @ordinary_monthly_cost %>円</h3>
+  <h3>今月節約した金額<%= @ordinary_monthly_cost-@actual_monthly_cost %>円</h3>
+<% end %>
+
 
 
 <%= link_to "前の月のリンク",root_path(month:@month.prev_month) %>
