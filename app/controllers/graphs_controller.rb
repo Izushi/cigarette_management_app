@@ -3,7 +3,7 @@ class GraphsController < ApplicationController
   def index
     @cigarettes = sum_cigarette_this_month
     @average = (@cigarettes.to_f/cigarettes_this_month.count).round(1)
-    @profile = Profile.first
+    @profile = current_user.profiles.first
     if @profile.nil?
     else
       @actual_monthly_cost = @cigarettes*@profile.box_price/20

@@ -2,15 +2,15 @@ class ProfilesController < ApplicationController
   before_action :set_profile, only: %i[edit update destroy]
 
   def index
-    @profile = Profile.last
+    @profile = current_user.profiles.last
   end
 
   def new
-    @profile = Profile.new
+    @profile = current_user.profiles.new
   end
 
   def create
-    @profile = Profile.new(profile_params)
+    @profile = current_user.profiles.new(profile_params)
     if @profile.save
       redirect_to profiles_path, notice: "登録しました"
     else
@@ -43,6 +43,6 @@ class ProfilesController < ApplicationController
   end
 
   def set_profile
-    @profile = Profile.find(params[:id])
+    @profile = current_user.profiles.find(params[:id])
   end
 end

@@ -33,12 +33,12 @@ end
 Graph.create!(graphs)
 puts "喫煙本数の初期データ投入に成功しました！"
 
-user.cigar_infos.destroy_all
+# user.cigar_infos.destroy_all
 
-user.cigar_infos.create!(brand: "マルボロ・メンソール", price: "570")
-user.cigar_infos.create!(brand: "ラッキーストライク・チルベリー", price: "400")
-user.cigar_infos.create!(brand: "アメスピ・ゴールド", price: "570")
-user.cigar_infos.create!(brand: "ケント・スパーク・メロー", price: "480")
-user.cigar_infos.create!(brand: "キャメル・ベリーカプセル", price: "450")
-user.cigar_infos.create!(brand: "ピース・ライト", price: "560")
-puts "タバコ情報の登録に成功しました！"
+# user.cigar_infos.create!(brand: "マルボロ・メンソール", price: "570")
+# user.cigar_infos.create!(brand: "ラッキーストライク・チルベリー", price: "400")
+# user.cigar_infos.create!(brand: "アメスピ・ゴールド", price: "570")
+# user.cigar_infos.create!(brand: "ケント・スパーク・メロー", price: "480")
+# user.cigar_infos.create!(brand: "キャメル・ベリーカプセル", price: "450")
+# user.cigar_infos.create!(brand: "ピース・ライト", price: "560")
+# puts "タバコ情報の登録に成功しました！"
