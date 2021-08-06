@@ -50,6 +50,8 @@ div.field_with_errors {
   }
 }
 
+// コレクション
+
 .icon {
   width: 27px;
   height: 40px;
@@ -123,4 +125,38 @@ div.field_with_errors {
 .trash {
   color: red;
   display: inline-block;
+}
+
+// グラフ
+.monthly_record {
+  border: solid 2px skyblue;
+  border-radius: 5px;
+  padding: 0.5em 1em 0.5em 1em;
+  position: relative;
+}
+
+.monthly_record .monthly_list {
+  line-height: 1.5;
+  padding: 0.5em 0;
+  list-style-type: none !important;
+}
+
+// .monthly_record .monthly_list:before {
+
+//   font-family: FontAwesome;
+//   content: "\f00c";
+//   /*アイコンの種類*/
+//   position: absolute;
+//   left: 1em;
+//   /*左端からのアイコンまでの距離*/
+//   color: skyblue;
+//   /*アイコン色*/
+// }
+
+.fa-chevron-circle-right {
+  color: skyblue;
+}
+
+.month-link {
+  color: skyblue;
 }

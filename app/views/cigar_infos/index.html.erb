@@ -14,7 +14,7 @@
         <td scope="row" class="text-center"><%= image_tag cigarinfo.img.url, class:'icon' if cigarinfo.img? %></td>
         <td class="break-word"><%= link_to cigarinfo.brand, cigarinfo %></td>
         <td class="break-word"><%= cigarinfo.price %>円</td>
-        <td class="text-right">
+        <td class="text-center">
           <%= link_to cigarinfo, method: :delete, data: { confirm: "削除しますか?" } do %>
             <i class="far fa-trash-alt trash"></i>
           <% end %>
