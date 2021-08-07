@@ -1,8 +1,11 @@
 <h1 class="text-center">プロフィール</h1>
 <br>
 <% if @profile.present? %>
-  <h3>現在吸っているタバコは一箱 <%= @profile.box_price %>円です</h3>
-  <h3>普段の喫煙本数は1日に<%= @profile.cigar_amount %>本です</h3>
+  <ul class="frame">
+    <li class="list"><i class="fas fa-dollar-sign"></i> 現在吸っているタバコは一箱 <%= @profile.box_price %>円です</li>
+    <li class="list"><i class="fas fa-smoking"></i> 普段の喫煙本数は1日に<%= @profile.cigar_amount %>本です</li>
+  </ul>
+  
   <br>
   <div class="text-center">
     <td>
@@ -13,7 +16,10 @@
     </td>
   </div>
 <% else %>
-  普段の喫煙量を登録しましょう
+  <ul class="frame">
+    <li class="list"><i class="fas fa-dollar-sign"></i> 現在吸っているタバコの値段を登録しましょう</li>
+    <li class="list"><i class="fas fa-smoking"></i> 普段の喫煙本数を登録しましょう</li>
+  </ul>
   <div class="text-center">
     <%= link_to 'プロフィールを登録', new_profile_path, class: "btn-create" %>
   </div>
