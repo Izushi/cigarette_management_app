@@ -1,6 +1,6 @@
 <header class="sticky-top">
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <%= link_to "タバコマネージャー", root_path, class: 'navbar-brand' %>
+    <%= link_to "タバコマネージャー", tops_path, class: 'navbar-brand' %>
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="ナビゲーションの切替">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -8,30 +8,50 @@
       <ul class="navbar-nav">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to 'プロフィール', profiles_path, class: 'nav-link' %>
+            <%= link_to root_path, class: 'nav-link' do %>
+              <i class="far fa-chart-bar"></i> グラフ
+            <% end %>
           </li>
           <li class="nav-item active">
-            <%= link_to 'コレクション', cigar_infos_path, class: 'nav-link' %>
+            <%= link_to profiles_path, class: 'nav-link' do %>
+              <i class="far fa-user"></i> プロフィール
+            <% end %>
+          </li>
+          <li class="nav-item active">
+            <%= link_to cigar_infos_path, class: 'nav-link' do %>
+              <i class="fas fa-book"></i> コレクション
+            <% end %>
           </li>
           
           <li class="nav-item active">
-            <%= link_to 'アカウント編集', edit_user_registration_path, class: 'nav-link' %>
+            <%= link_to edit_user_registration_path, class: 'nav-link' do %>
+              <i class="far fa-edit"></i> アカウント編集
+            <% end %>
           </li>
           <li class="nav-item active">
-            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+            <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link' do %>
+              <i class="fas fa-sign-out-alt"></i> ログアウト
+            <% end %>
           </li>
         <% else %>
           <li class="nav-item active">
-            <%= link_to "アカウント登録", new_user_registration_path, class: 'nav-link' %>
+            <%= link_to new_user_registration_path, class: 'nav-link' do %>
+               <i class="far fa-user-circle"></i> アカウント登録
+            <% end %>
           </li>
           <li class="nav-item active">
-            <%= link_to "ログイン", new_user_session_path, class: 'nav-link' %>
+            <%= link_to new_user_session_path, class: 'nav-link' do %>
+              <i class="fas fa-sign-in-alt"></i> ログイン
+            <% end %>
           </li>
           <li class="nav-item active">
-            <%= link_to "ゲストログイン（閲覧用）", users_guest_sign_in_path, method: :post, class: 'nav-link' %>
+            <%= link_to users_guest_sign_in_path, method: :post, class: 'nav-link' do %>
+              <i class="far fa-eye"></i> ゲストログイン（閲覧用）
+            <% end %>
           </li>
         <% end %>
       </ul>
     </div>
   </nav>
 </header>
+
