@@ -1,2 +1,74 @@
-<h1>Tops#index</h1>
-<p>Find me in app/views/tops/index.html.erb</p>
+
+<section class="wrapper">
+    <div class="container">
+        <div class="content">
+            <h2 class="heading">タバコマネージャー</h2>
+            <div class="list">
+                <div class="list-item">「なんとなく吸うか」はもうやめよう。<br>タバコマネージャーはあなたの禁煙、減煙をサポートします。</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="explain">
+    <div class="container">
+        <div class="content">
+            <div class="content-item">
+                <%= link_to image_tag('graph_image.png', class: 'image'), root_path %>
+            </div>
+            <div class="content-item">
+                <div class="text">
+                    <h2 class="heading"><i class="far fa-chart-bar"></i>  グラフ機能</h2>
+                    <p>タバコマネージャーは毎日の喫煙本数をシンプルなグラフとして記録してくれます。喫煙量の増減を可視化し、喫煙習慣を見直しましょう。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="explain2">
+    <div class="container">
+        <div class="content">
+            <div class="content-item">
+                <%= link_to image_tag('profile_image.png', class: 'image'), profiles_path %>
+            </div>    
+            <div class="content-item">
+                <div class="text">
+                    <h2 class="heading"><i class="far fa-user"></i> プロフィール機能</h2>
+                    <p>あなたが現在吸っているタバコの値段と、普段の喫煙量を登録しましょう。タバコマネージャーが月ごとの出費や節約額を教えてくれます。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="explain">
+    <div class="container">
+        <div class="content">
+            <div class="content-item">
+                <%= link_to image_tag('record_image.png', class: 'image'), root_path %>
+            </div>
+            <div class="content-item">
+                <div class="text">
+                    <h2 class="heading"><i class="fas fa-calculator"></i> レコード機能</h2>
+                    <p>タバコマネージャーが計算した喫煙本数、出費、節約額などのデータを月ごとに参照することができます。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="explain2">
+    <div class="container">
+        <div class="content">
+            <div class="content-item">
+                <%= link_to image_tag('collection_image.png', class: 'image'), cigar_infos_path %>
+            </div>    
+            <div class="content-item">
+                <div class="text">
+                    <h2 class="heading"><i class="fas fa-book"></i> コレクション機能</h2>
+                    <p>吸ったタバコのレビューを書きましょう。写真と値段を添えてあなただけのタバココレクションを完成させましょう。</p>
+            </div>
+        </div>
+    </div>
+</section>

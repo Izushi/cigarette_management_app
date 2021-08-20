@@ -183,3 +183,149 @@ div.field_with_errors {
 .fa-smoking {
   margin-right: 10px;
 }
+
+// トップページのレイアウト
+// メインのレイアウト
+.wrapper {
+  width: 100%;
+  background-image: url("man-1854175_1280.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+}
+
+.wrapper .container {
+  max-width: 1000px;
+  margin: 0px auto;
+  padding: 80px 0px;
+}
+
+/* content */
+.wrapper .content .heading {
+  margin: 0px 0px 40px 0px;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: normal;
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  .wrapper .content .list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.wrapper .content .list-item {
+  // padding: 30px;
+  line-height: 1.8rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+// 説明1のレイアウト
+/* container */
+.explain {
+  width: 100%;
+  background-color: #fafafa;
+}
+
+.explain .container {
+  max-width: 1000px;
+  margin: 0px auto;
+  padding: 80px 0px;
+}
+
+/* content */
+@media (min-width: 992px) {
+  .explain .container .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.explain .content-item {
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .explain .content-item {
+    width: 50%;
+  }
+}
+
+.explain .image {
+  display: block;
+  max-width: 100%;
+  margin: 0px auto;
+}
+
+.explain .text {
+  padding: 50px;
+}
+
+.explain .text .heading {
+  margin: 0px 0px 40px 0px;
+  font-size: 24px;
+  font-weight: normal;
+  text-align: center;
+}
+
+// 説明2のレイアウト
+/* container */
+.explain2 {
+  width: 100%;
+  background-color: #fafafa;
+}
+
+.explain2 .container {
+  max-width: 1000px;
+  margin: 0px auto;
+  padding: 80px 0px;
+}
+
+/* content */
+@media (min-width: 992px) {
+  .explain2 .container .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* PC時のみ順番を入れ替える */
+@media (min-width: 992px) {
+  .explain2 .content {
+    flex-direction: row-reverse;
+  }
+}
+
+.explain2 .content-item {
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .explain2 .content-item {
+    width: 50%;
+  }
+}
+
+.explain2 .image {
+  display: block;
+  max-width: 100%;
+  margin: 0px auto;
+}
+
+.explain2 .text {
+  padding: 50px;
+}
+
+.explain2 .text .heading {
+  margin: 0px 0px 40px 0px;
+  font-size: 24px;
+  font-weight: normal;
+  text-align: center;
+}
