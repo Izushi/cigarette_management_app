@@ -22,7 +22,7 @@ class GraphsController < ApplicationController
     else
       flash[:alert] = "エラーが発生しました"
     end
-    redirect_to root_path
+    redirect_to graphs_path
   end
 
   def update
@@ -37,7 +37,7 @@ class GraphsController < ApplicationController
     else
       flash[:alert] = "エラーが発生しました"
     end
-    redirect_to root_path
+    redirect_to graphs_path
   end
 
   private

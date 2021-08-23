@@ -8,7 +8,7 @@
       <ul class="navbar-nav">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to root_path, class: 'nav-link' do %>
+            <%= link_to graphs_path, class: 'nav-link' do %>
               <i class="far fa-chart-bar"></i> グラフ
             <% end %>
           </li>
