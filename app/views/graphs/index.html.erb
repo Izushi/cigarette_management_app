@@ -64,6 +64,6 @@
 </ul>
 
 <div class="text-center">
-  <%= link_to "< 前の月",root_path(month:@month.prev_month), {class: "month-link"} %>
-  <%= link_to "次の月 >",root_path(month:@month.next_month), {class: "month-link"} %>
+  <%= link_to "< 前の月",graphs_path(month:@month.prev_month), {class: "month-link"} %>
+  <%= link_to "次の月 >",graphs_path(month:@month.next_month), {class: "month-link"} %>
 </div>
