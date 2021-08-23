@@ -1,87 +1,111 @@
 <section class="explain2">
-    <div class="container">
-        <div class="content">
-            <div class="content-item">
-                <%= image_tag 'undraw_professor_8lrt.png', class: 'image' %>
-            </div>    
-            <div class="content-item">
-                <div class="text">
-                    <h2 class="title">「なんとなく吸うか」はもうやめよう。</h2>
-                    <p>朝一のタバコ、焼肉の後のタバコ、友達と吸うタバコ、人それぞれ最高に美味しいタバコがあります。<br><br>
-                        一方でなんとなく火をつけたタバコは不味いですよね。
-                        そんな「無駄タバコ」をタバコマネージャーと一緒に減らしていきましょう。</p>
-                </div>
-                <div class="text-center text-lg-start">
-                    <%= link_to "今すぐはじめる", new_user_registration_path, class: 'btn btn-outline-dark rounded-pill' %>
-                    <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: 'btn btn-outline-danger rounded-pill' %>
-                </div>
-            </div>
+  <div class="container">
+    <div class="content">
+      <div class="content-item">
+        <%= image_tag 'undraw_professor_8lrt.png', class: 'image' %>
+      </div>    
+      <div class="content-item">
+        <div class="text">
+          <h2 class="title">「なんとなく吸うか」はもうやめよう。</h2>
+          <p>朝一のタバコ、焼肉の後のタバコ、友達と吸うタバコ、人それぞれ最高に美味しいタバコがあります。<br><br>
+             一方でなんとなく火をつけたタバコは不味いですよね。
+             そんな「無駄タバコ」をタバコマネージャーと一緒に減らしていきましょう。</p>
         </div>
+        <div class="text-center text-lg-start">
+          <%= link_to "今すぐはじめる", new_user_registration_path, class: 'btn btn-outline-dark rounded-pill' %>
+          <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: 'btn btn-outline-danger rounded-pill' %>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 
 <section class="explain">
-    <div class="container">
-        <div class="content">
-            <div class="content-item">
-                <%= link_to image_tag('graph_image.png', class: 'image'), graphs_path %>
-            </div>
-            <div class="content-item">
-                <div class="text">
-                    <h2 class="heading"><i class="far fa-chart-bar"></i>  グラフ機能</h2>
-                    <p>タバコマネージャーは毎日の喫煙本数をシンプルなグラフとして記録してくれます。喫煙量の増減を可視化し、喫煙習慣を見直しましょう。</p>
-                </div>
-            </div>
+  <div class="container">
+    <div class="content">
+      <div class="content-item">
+        <%= link_to image_tag('graph_image.png', class: 'image'), graphs_path %>
+      </div>
+      <div class="content-item">
+        <div class="text">
+          <h2 class="heading"><i class="far fa-chart-bar"></i>  グラフ機能</h2>
+          <p>タバコマネージャーは毎日の喫煙本数をシンプルなグラフとして記録してくれます。喫煙量の増減を可視化し、喫煙習慣を見直しましょう。</p>
         </div>
+      </div>
     </div>
+  </div>
 </section>
 
 <section class="explain2">
-    <div class="container">
-        <div class="content">
-            <div class="content-item">
-                <%= link_to image_tag('profile_image.png', class: 'image'), profiles_path %>
-            </div>    
-            <div class="content-item">
-                <div class="text">
-                    <h2 class="heading"><i class="far fa-user"></i> プロフィール機能</h2>
-                    <p>あなたが現在吸っているタバコの値段と、普段の喫煙量を登録しましょう。タバコマネージャーが月ごとの出費や節約額を教えてくれます。</p>
-                </div>
-            </div>
+  <div class="container">
+    <div class="content">
+      <div class="content-item">
+        <%= link_to image_tag('profile_image.png', class: 'image'), profiles_path %>
+      </div>    
+      <div class="content-item">
+        <div class="text">
+          <h2 class="heading"><i class="far fa-user"></i> プロフィール機能</h2>
+          <p>あなたが現在吸っているタバコの値段と、普段の喫煙量を登録しましょう。タバコマネージャーが月ごとの出費や節約額を教えてくれます。</p>
         </div>
+      </div>
     </div>
+  </div>
 </section>
 
 <section class="explain">
-    <div class="container">
-        <div class="content">
-            <div class="content-item">
-                <%= link_to image_tag('record_image.png', class: 'image'), graphs_path %>
-            </div>
-            <div class="content-item">
-                <div class="text">
-                    <h2 class="heading"><i class="fas fa-calculator"></i> レコード機能</h2>
-                    <p>タバコマネージャーが計算した喫煙本数、出費、節約額などのデータを月ごとに参照することができます。</p>
-                </div>
-            </div>
+  <div class="container">
+    <div class="content">
+      <div class="content-item">
+        <%= link_to image_tag('record_image.png', class: 'image'), graphs_path %>
+      </div>
+      <div class="content-item">
+        <div class="text">
+          <h2 class="heading"><i class="fas fa-calculator"></i> レコード機能</h2>
+          <p>タバコマネージャーが計算した喫煙本数、出費、節約額などのデータを月ごとに参照することができます。</p>
         </div>
+      </div>
     </div>
+  </div>
 </section>
 
 <section class="explain2">
-    <div class="container">
-        <div class="content">
-            <div class="content-item">
-                <%= link_to image_tag('collection_image.png', class: 'image'), cigar_infos_path %>
-            </div>    
-            <div class="content-item">
-                <div class="text">
-                    <h2 class="heading"><i class="fas fa-book"></i> コレクション機能</h2>
-                    <p>吸ったタバコのレビューを書きましょう。写真と値段を添えてあなただけのタバココレクションを完成させましょう。</p>
-            </div>
+  <div class="container">
+    <div class="content">
+      <div class="content-item">
+        <%= link_to image_tag('collection_image.png', class: 'image'), cigar_infos_path %>
+      </div>    
+      <div class="content-item">
+        <div class="text">
+          <h2 class="heading"><i class="fas fa-book"></i> コレクション機能</h2>
+          <p>吸ったタバコのレビューを書きましょう。写真と値段を添えてあなただけのタバココレクションを完成させましょう。</p>
         </div>
+      </div>
     </div>
+  </div>
 </section>
+
+<section class="reviewer">
+  <div class="container">
+    <div class="content">
+      <h2 class="heading">ユーザーの声</h2>
+      <div class="list">
+        <div class="list-item">
+          <%= image_tag 'undraw_professor_8lrt.png', class: 'image' %>
+          <div class="text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</div>
+        </div>
+        <div class="list-item">
+          <%= image_tag 'undraw_professor_8lrt.png', class: 'image' %>
+          <div class="text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</div>
+        </div>    
+        <div class="list-item">
+          <%= image_tag 'undraw_professor_8lrt.png', class: 'image' %>
+          <div class="text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div class="foot">
   <section >
     <div class="row justify-content-center">
