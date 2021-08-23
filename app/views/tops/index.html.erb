@@ -1,10 +1,20 @@
-
-<section class="wrapper">
+<section class="explain2">
     <div class="container">
         <div class="content">
-            <h2 class="heading">タバコマネージャー</h2>
-            <div class="list">
-                <div class="list-item">「なんとなく吸うか」はもうやめよう。<br>タバコマネージャーはあなたの禁煙、減煙をサポートします。</div>
+            <div class="content-item">
+                <%= image_tag 'undraw_professor_8lrt.png', class: 'image' %>
+            </div>    
+            <div class="content-item">
+                <div class="text">
+                    <h2 class="title">「なんとなく吸うか」はもうやめよう。</h2>
+                    <p>朝一のタバコ、焼肉の後のタバコ、友達と吸うタバコ、人それぞれ最高に美味しいタバコがあります。<br><br>
+                        一方でなんとなく火をつけたタバコは不味いですよね。
+                        そんな「無駄タバコ」をタバコマネージャーと一緒に減らしていきましょう。</p>
+                </div>
+                <div class="text-center text-lg-start">
+                    <%= link_to "今すぐはじめる", new_user_registration_path, class: 'btn btn-outline-dark rounded-pill' %>
+                    <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: 'btn btn-outline-danger rounded-pill' %>
+                </div>
             </div>
         </div>
     </div>

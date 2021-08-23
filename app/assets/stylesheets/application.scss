@@ -188,41 +188,57 @@ div.field_with_errors {
 // メインのレイアウト
 .wrapper {
   width: 100%;
-  background-image: url("man-1854175_1280.jpg");
+  height: 500px;
+  background-image: url("undraw_professor_8lrt.png");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-position: center center;
-
+  // min-height: 100vh;
 }
 
-.wrapper .container {
-  max-width: 1000px;
-  margin: 0px auto;
-  padding: 80px 0px;
-}
-
-/* content */
-.wrapper .content .heading {
+.title {
   margin: 0px 0px 40px 0px;
-  color: #ffffff;
-  font-size: 24px;
+  font-size: 21px;
   font-weight: normal;
   text-align: center;
 }
 
-@media (min-width: 992px) {
-  .wrapper .content .list {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
+// .wrapper .container {
+//   max-width: 1000px;
+//   margin: 0px auto;
+//   padding: 80px 0px;
+// }
 
-.wrapper .content .list-item {
-  // padding: 30px;
-  line-height: 1.8rem;
-  color: #ffffff;
+/* content */
+// .wrapper .content .heading {
+//   margin: 0px 0px 40px 0px;
+//   color: #ffffff;
+//   font-size: 24px;
+//   font-weight: normal;
+//   text-align: center;
+// }
+
+// @media (min-width: 992px) {
+//   .wrapper .content .list {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//   }
+// }
+
+// .wrapper .content .list-item {
+// padding: 30px;
+// line-height: 1.8rem;
+// color: #ffffff;
+// text-align: center;
+// }
+
+.description {
+  margin-top: auto;
   text-align: center;
+  color: #FBF6F0;
+  background: #17a2b8;
+  padding: 50px 35px;
 }
 
 // 説明1のレイアウト
@@ -234,12 +250,12 @@ div.field_with_errors {
 
 .explain .container {
   max-width: 1000px;
-  margin: 0px auto;
+  // margin: 20px;
   padding: 80px 0px;
 }
 
 /* content */
-@media (min-width: 992px) {
+@media (min-width: 700px) {
   .explain .container .content {
     display: flex;
     align-items: center;
@@ -251,7 +267,7 @@ div.field_with_errors {
   width: 100%;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 700px) {
   .explain .content-item {
     width: 50%;
   }
@@ -278,17 +294,19 @@ div.field_with_errors {
 /* container */
 .explain2 {
   width: 100%;
-  background-color: #fafafa;
+  max-height: auto;
+  background-color: white;
 }
 
 .explain2 .container {
   max-width: 1000px;
+  max-height: auto;
   margin: 0px auto;
   padding: 80px 0px;
 }
 
 /* content */
-@media (min-width: 992px) {
+@media (min-width: 700px) {
   .explain2 .container .content {
     display: flex;
     align-items: center;
@@ -297,7 +315,7 @@ div.field_with_errors {
 }
 
 /* PC時のみ順番を入れ替える */
-@media (min-width: 992px) {
+@media (min-width: 700px) {
   .explain2 .content {
     flex-direction: row-reverse;
   }
@@ -307,7 +325,7 @@ div.field_with_errors {
   width: 100%;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 700px) {
   .explain2 .content-item {
     width: 50%;
   }
