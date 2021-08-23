@@ -82,3 +82,21 @@
         </div>
     </div>
 </section>
+<div class="foot">
+  <section >
+    <div class="row justify-content-center">
+      <div class="col-lg-6 d-flex flex-column">
+      <br>
+        <h5 class="title">タバコマネージャーをはじめよう!</h5>
+        <p class="text-center">登録は1分で完了します</p>
+        <div>
+          <div class="text-center text-lg-start">
+            <%= link_to "今すぐはじめる", new_user_registration_path, class: 'btn btn-outline-dark rounded-pill' %>
+            <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: 'btn btn-outline-danger rounded-pill' %>
+          </div>
+          <br>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
