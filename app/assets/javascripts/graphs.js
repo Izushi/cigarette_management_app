@@ -70,10 +70,7 @@ document.addEventListener('turbolinks:load', () => {
     })
 
     const TODAY = convertDate(new Date())
-    const A_WEEK_AGO = new Date(TODAY.getFullYear(), TODAY.getMonth(), TODAY.getDate() - 6)
-    const TWO_WEEKS_AGO = new Date(TODAY.getFullYear(), TODAY.getMonth(), TODAY.getDate() - 13)
     const A_MONTH_AGO = new Date(TODAY.getFullYear(), TODAY.getMonth() - 1, TODAY.getDate() + 1)
-    const THREE_MONTHS_AGO = new Date(TODAY.getFullYear(), TODAY.getMonth() - 3, TODAY.getDate() + 1)
 
     // グラフを描く場所を取得
     const chartCigaretteContext = document.getElementById("chart-cigarette").getContext('2d')
@@ -150,6 +147,7 @@ document.addEventListener('turbolinks:load', () => {
       startCalendarFlatpickr.setDate(from)
       endCalendarFlatpickr.setDate(to)
     }
+
 
     // 過去◯週間のグラフを描くボタン
     // document.getElementById('a-week-button').addEventListener('click', () => {

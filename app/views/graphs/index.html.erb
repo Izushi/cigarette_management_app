@@ -6,8 +6,8 @@
     </button>
   </div>
   <div class="col-6">
-    <button type="button" class="btn btn-info btn-block" data-toggle="modal" data-target="#edit-modal">
-      喫煙本数の編集
+    <button type="button" class="btn btn-secondary btn-block" data-toggle="modal" data-target="#edit-modal">
+      喫煙本数の修正
     </button>
   </div>
 </div>
@@ -40,7 +40,7 @@
   </div>
 </div> %>
 <canvas id="chart-cigarette" class="mt-5"></canvas>
-<%= render 'modal', action: 'new', title: '新規登録' %>
+<%= render 'modal', action: 'new', title: '登録' %>
 <%= render 'modal', action: 'edit', title: '修正' %>
 
 <br>

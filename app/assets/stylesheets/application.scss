@@ -255,7 +255,7 @@ div.field_with_errors {
 }
 
 /* content */
-@media (min-width: 700px) {
+@media (min-width: 992px) {
   .explain .container .content {
     display: flex;
     align-items: center;
@@ -267,7 +267,7 @@ div.field_with_errors {
   width: 100%;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 992px) {
   .explain .content-item {
     width: 50%;
   }
@@ -306,7 +306,7 @@ div.field_with_errors {
 }
 
 /* content */
-@media (min-width: 700px) {
+@media (min-width: 992px) {
   .explain2 .container .content {
     display: flex;
     align-items: center;
@@ -315,7 +315,7 @@ div.field_with_errors {
 }
 
 /* PC時のみ順番を入れ替える */
-@media (min-width: 700px) {
+@media (min-width: 992px) {
   .explain2 .content {
     flex-direction: row-reverse;
   }
@@ -325,7 +325,7 @@ div.field_with_errors {
   width: 100%;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 992px) {
   .explain2 .content-item {
     width: 50%;
   }
