@@ -8,6 +8,7 @@ class GraphsController < ApplicationController
     else
       @actual_monthly_cost = @cigarettes*@profile.box_price/20
       @ordinary_monthly_cost = (@profile.box_price/20.to_f*@profile.cigar_amount*cigarettes_this_month.count).to_i
+      @prolonged_life = ((@profile.cigar_amount.to_f*cigarettes_this_month.count-@cigarettes)*5/60).round(1)
     end
     gon.cigarette_records = Graph.chart_data(current_user)
     # 記録済みの日付データ
