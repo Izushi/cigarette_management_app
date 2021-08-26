@@ -3,6 +3,18 @@ class ProfilesController < ApplicationController
 
   def index
     @profile = current_user.profiles.last
+    if @profile.nil?
+    else
+      total_actual_cigarettes = current_user.graphs.all.sum(:cigarette)
+      profile = current_user.profiles.first
+      total_ordinary_cigarettes = current_user.graphs.count*profile.cigar_amount
+      @total_saved_cigarettes = total_ordinary_cigarettes-total_actual_cigarettes
+      @total_saved_money = (total_ordinary_cigarettes-total_actual_cigarettes)*profile.box_price/20
+      @total_prolonged_life = (total_ordinary_cigarettes-total_actual_cigarettes)*5
+      @days = (@total_prolonged_life/1440).to_i
+      @hours = (@total_prolonged_life%1440/60).to_i
+      @minites = (@total_prolonged_life%1440%60).to_i
+    end
   end
 
   def new
