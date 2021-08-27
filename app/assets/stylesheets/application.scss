@@ -170,14 +170,19 @@ div.field_with_errors {
 }
 
 .frame .list {
-  line-height: 1.5;
+  line-height: 2;
   padding: 0.5em 0;
   list-style-type: none !important;
 }
 
+.frame .list .font {
+  font-size: 1.3rem;
+  background: linear-gradient(transparent 70%, #FFFF00 0%);
+}
+
 .fa-dollar-sign {
-  margin-right: 15px;
-  margin-left: 5px;
+  margin-right: 16px;
+  margin-left: 4px;
 }
 
 .fa-smoking {

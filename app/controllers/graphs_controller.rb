@@ -6,8 +6,10 @@ class GraphsController < ApplicationController
     @profile = current_user.profiles.first
     if @profile.nil?
     else
-      @actual_monthly_cost = @cigarettes*@profile.box_price/20
+      @actual_monthly_cost = (@cigarettes*@profile.box_price/20).to_i
       @ordinary_monthly_cost = (@profile.box_price/20.to_f*@profile.cigar_amount*cigarettes_this_month.count).to_i
+      @monthly_saved_cigarettes = (@profile.cigar_amount*cigarettes_this_month.count)-@cigarettes
+      @monthly_saved_money = @ordinary_monthly_cost-@actual_monthly_cost
       @prolonged_life = ((@profile.cigar_amount.to_f*cigarettes_this_month.count-@cigarettes)*5/60).round(1)
     end
     gon.cigarette_records = Graph.chart_data(current_user)
