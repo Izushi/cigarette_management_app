@@ -9,6 +9,7 @@ class ProfilesController < ApplicationController
       profile = current_user.profiles.first
       total_ordinary_cigarettes = current_user.graphs.count*profile.cigar_amount
       @total_saved_cigarettes = total_ordinary_cigarettes-total_actual_cigarettes
+      @saved_vitaminc = (@total_saved_cigarettes/2).to_i
       @total_saved_money = (total_ordinary_cigarettes-total_actual_cigarettes)*profile.box_price/20
       @total_prolonged_life = (total_ordinary_cigarettes-total_actual_cigarettes)*5
       @days = (@total_prolonged_life/1440).to_i

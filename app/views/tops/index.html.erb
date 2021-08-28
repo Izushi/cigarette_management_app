@@ -7,9 +7,9 @@
       <div class="content-item">
         <div class="text">
           <h2 class="title">「なんとなく吸うか」はもうやめよう。</h2>
-          <p>朝一のタバコ、焼肉の後のタバコ、友達と吸うタバコ、人それぞれ最高に美味しいタバコがあります。<br><br>
-             一方でなんとなく火をつけたタバコは不味いですよね。
-             そんな「無駄タバコ」をタバコマネージャーと一緒に減らしていきましょう。</p>
+          <p>タバコマネージャーは喫煙本数をグラフ化し、節約額と延びた寿命を算出します。<br><br>
+            さあ、タバコマネージャーと「無駄タバコ」を減らしてお財布とカラダに優しいあなたへ。
+             </p>
         </div>
         <div class="text-center text-lg-start">
           <%= link_to "今すぐはじめる", new_user_registration_path, class: 'btn btn-outline-dark rounded-pill' %>
@@ -40,12 +40,12 @@
   <div class="container">
     <div class="content">
       <div class="content-item">
-        <%= link_to image_tag('profile_image.png', class: 'image'), profiles_path %>
-      </div>    
+        <%= link_to image_tag('record_image.png', class: 'image'), graphs_path %>
+      </div>
       <div class="content-item">
         <div class="text">
-          <h2 class="heading"><i class="far fa-user"></i> プロフィール機能</h2>
-          <p>あなたが現在吸っているタバコの値段と、普段の喫煙量を登録しましょう。タバコマネージャーが月ごとの出費や節約額を教えてくれます。</p>
+          <h2 class="heading"><i class="fas fa-calculator"></i> レコード機能</h2>
+          <p>タバコマネージャーが計算した喫煙本数に関連するデータを月ごとに参照することができます。</p>
         </div>
       </div>
     </div>
@@ -56,12 +56,12 @@
   <div class="container">
     <div class="content">
       <div class="content-item">
-        <%= link_to image_tag('record_image.png', class: 'image'), graphs_path %>
-      </div>
+        <%= link_to image_tag('profile_image.png', class: 'image'), profiles_path %>
+      </div>    
       <div class="content-item">
         <div class="text">
-          <h2 class="heading"><i class="fas fa-calculator"></i> レコード機能</h2>
-          <p>タバコマネージャーが計算した喫煙本数、出費、節約額などのデータを月ごとに参照することができます。</p>
+          <h2 class="heading"><i class="far fa-user"></i> プロフィール機能</h2>
+          <p>あなたが現在吸っているタバコの値段と、普段の喫煙量を登録しましょう。タバコマネージャーが、我慢したタバコや節約額、延びた寿命を算出してくれます。</p>
         </div>
       </div>
     </div>

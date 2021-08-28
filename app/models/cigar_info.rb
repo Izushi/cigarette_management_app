@@ -10,8 +10,8 @@ class CigarInfo < ApplicationRecord
 
   private
   def img_size
-    if img.size > 1.megabyte
-      errors.add(:img, "が1MB以上です")
+    if img.size > 5.megabyte
+      errors.add(:img, "が5MB以上です")
     end
   end
 
