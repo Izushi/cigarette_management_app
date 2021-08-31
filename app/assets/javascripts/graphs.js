@@ -119,6 +119,14 @@ document.addEventListener('turbolinks:load', () => {
               return 'タバコ: ' + tooltipItem.yLabel + '本'
             }
           }
+        },
+        scales: {
+          yAxes: [{
+            ticks: {
+              // y軸のメモリを 0 からスタートに強制
+              beginAtZero: true
+            }
+          }]
         }
       }
 
@@ -147,24 +155,6 @@ document.addEventListener('turbolinks:load', () => {
       startCalendarFlatpickr.setDate(from)
       endCalendarFlatpickr.setDate(to)
     }
-
-
-    // 過去◯週間のグラフを描くボタン
-    // document.getElementById('a-week-button').addEventListener('click', () => {
-    //   drawGraphToToday(A_WEEK_AGO)
-    // })
-
-    // document.getElementById('two-weeks-button').addEventListener('click', () => {
-    //   drawGraphToToday(TWO_WEEKS_AGO)
-    // })
-
-    // document.getElementById('a-month-button').addEventListener('click', () => {
-    //   drawGraphToToday(A_MONTH_AGO)
-    // })
-
-    // document.getElementById('three-months-button').addEventListener('click', () => {
-    //   drawGraphToToday(THREE_MONTHS_AGO)
-    // })
 
     // グラフの初期表示
     drawGraphToToday(A_MONTH_AGO)
