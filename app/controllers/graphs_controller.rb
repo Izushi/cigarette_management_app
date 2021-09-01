@@ -1,6 +1,10 @@
 class GraphsController < ApplicationController
   include GraphsHelper
   def index
+    @graph = current_user.graphs.first
+    gon.cigarette_records = Graph.chart_data(current_user)
+    # 記録済みの日付データ
+    gon.recorded_dates = current_user.graphs.map(&:date)
     @cigarettes = sum_cigarette_this_month
     @average = (@cigarettes.to_f/cigarettes_this_month.count).round(1)
     @profile = current_user.profiles.first
@@ -12,9 +16,6 @@ class GraphsController < ApplicationController
       @monthly_saved_money = @ordinary_monthly_cost-@actual_monthly_cost
       @prolonged_life = ((@profile.cigar_amount.to_f*cigarettes_this_month.count-@cigarettes)*5/60).round(1)
     end
-    gon.cigarette_records = Graph.chart_data(current_user)
-    # 記録済みの日付データ
-    gon.recorded_dates = current_user.graphs.map(&:date)
   end
 
   def create

@@ -1,5 +1,9 @@
 <%= Gon::Base.render_data %>
-
+<% if @graph.nil? %>
+  <ul class="frame">
+    <li class="list">喫煙本数の登録ボタンを押して今日の喫煙本数を登録しましょう</li>
+  </ul>
+<% end %>
 <div class="row no-gutters">
   <div class="input-group col-sm-6 pr-sm-3 mt-3">
     <div class="input-group-prepend">

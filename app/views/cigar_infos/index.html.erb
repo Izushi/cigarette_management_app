@@ -1,29 +1,36 @@
 <h2 class="text-center">コレクション</h2>
-<table class="table table-borderd table-striped mt-4">
-  <thead class="table-primary">
-    <tr>
-      <th scope="col"></th>
-      <th scope="col" class="w-50">タバコ銘柄</th>
-      <th scope="col" class="w-40">価格</th>
-      <th scope="col"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @cigarinfos.each.with_index(1) do |cigarinfo, i| %>
+<% if @cigarinfos.present? %>
+  <table class="table table-borderd table-striped mt-4">
+    <thead class="table-primary">
       <tr>
-        <td scope="row" class="text-center"><%= image_tag cigarinfo.img.url, class:'icon' if cigarinfo.img? %></td>
-        <td class="break-word"><%= link_to cigarinfo.brand, cigarinfo %></td>
-        <td class="break-word"><%= cigarinfo.price %>円</td>
-        <td class="text-center">
-          <%= link_to cigarinfo, method: :delete, data: { confirm: "削除しますか?" } do %>
-            <i class="far fa-trash-alt trash"></i>
-          <% end %>
-        </td>
+        <th scope="col"></th>
+        <th scope="col" class="w-50">タバコ銘柄</th>
+        <th scope="col" class="w-40">価格</th>
+        <th scope="col"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
+    </thead>
+    <tbody>
+      <% @cigarinfos.each.with_index(1) do |cigarinfo, i| %>
+        <tr>
+          <td scope="row" class="text-center"><%= image_tag cigarinfo.img.url, class:'icon' if cigarinfo.img? %></td>
+          <td class="break-word"><%= link_to cigarinfo.brand, cigarinfo %></td>
+          <td class="break-word"><%= cigarinfo.price %>円</td>
+          <td class="text-center">
+            <%= link_to cigarinfo, method: :delete, data: { confirm: "削除しますか?" } do %>
+              <i class="far fa-trash-alt trash"></i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+<br>
+  <ul class="frame">
+    <li class="list">吸ったタバコのレビューをしましょう</li>
+  </ul>
+<% end %>
+<br>
 <div class="text-center">
   <%= link_to '新しいタバコを登録', new_cigar_info_path, class: "btn-create" %>
 </div>
