@@ -1,7 +1,7 @@
 document.addEventListener('turbolinks:load', () => {
   if (document.getElementById('start-calendar')) {
     // '2020-01-12'のような文字列から，Javascriptの日付オブジェクトを取得する関数
-    // setHoursを使用しないと，時差の影響で0時にならないため注意！
+    // setHoursを使用しないと，時差の影響で0時にならないため
     const convertDate = (date) => new Date(new Date(date).setHours(0, 0, 0, 0))
 
     // 日付の古い方・新しい方を取得する関数
