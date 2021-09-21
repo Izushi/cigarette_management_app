@@ -38,7 +38,8 @@
 <%= render 'modal', action: 'edit', title: '修正' %>
 
 <br>
-<h3><%= @month.month %>月の記録</h3>
+  <h3><%= @month.month %>月の記録</h3>
+
 <ul class="monthly_record">
   <li class="monthly_list"><i class="fas fa-chevron-circle-right"></i> 今月の合計 <%= @cigarettes %>本</li>
 
@@ -59,6 +60,6 @@
 </ul>
 
 <div class="text-center">
-  <%= link_to "< 前の月",graphs_path(month:@month.prev_month), {class: "month-link"} %>
-  <%= link_to "次の月 >",graphs_path(month:@month.next_month), {class: "month-link"} %>
+  <td><%= link_to "◀️ 前の月",graphs_path(month:@month.prev_month), {class: "month-link"} %></td>
+  <td><%= link_to "次の月 ▶️",graphs_path(month:@month.next_month), {class: "month-link"} %></td>
 </div>
