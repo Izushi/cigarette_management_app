@@ -1,6 +1,11 @@
 <header class="sticky-top">
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <%= link_to "タバコマネージャー", tops_path, class: 'navbar-brand' %>
+    <% if user_signed_in? %>
+      <%= link_to "タバコマネージャー", graphs_path, class: 'navbar-brand' %>
+    <% else %>
+      <%= link_to "タバコマネージャー", tops_path, class: 'navbar-brand' %>
+    <% end %>
+    
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="ナビゲーションの切替">
       <span class="navbar-toggler-icon"></span>
     </button>
