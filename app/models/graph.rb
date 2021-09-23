@@ -19,7 +19,7 @@ class Graph < ApplicationRecord
         cigarette = graphs[index].cigarette
         index += 1
       end
-      # データが存在しない日付の体重は nil とする。
+      # データが存在しない日付は nil とする。
       { date: date, cigarette: cigarette }
     end
   end
