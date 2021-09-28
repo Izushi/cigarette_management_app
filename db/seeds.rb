@@ -2,8 +2,8 @@ EMAIL = "guest@example.com"
 PASSWORD = "password"
 
 # データの入力範囲
-START_DATE = Date.today - 11.months
-END_DATE = Date.today + 1.months
+START_DATE = Date.today - 12.months
+END_DATE = Date.yesterday
 
 # 記録する喫煙本数の範囲
 MIN_CIGARETTE = 0
