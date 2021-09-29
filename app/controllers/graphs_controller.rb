@@ -6,16 +6,16 @@ class GraphsController < ApplicationController
     gon.cigarette_records = Graph.chart_data(current_user)
     # 記録済みの日付データ
     gon.recorded_dates = current_user.graphs.map(&:date)
-    @cigarettes = sum_cigarette_this_month
-    @average = (@cigarettes.to_f/cigarettes_this_month.count).round(1)
+    @total_monthly_cigarettes = total_monthly_cigarettes
+    @average = (@total_monthly_cigarettes.to_f/monthly_graphs.count).round(1)
     @profile = current_user.profiles.first
     if @profile.nil?
     else
-      @actual_monthly_cost = (@cigarettes*@profile.box_price/NUMBER_OF_CIGARETTES_IN_A_BOX).to_i
-      @ordinary_monthly_cost = (@profile.box_price/NUMBER_OF_CIGARETTES_IN_A_BOX.to_f*@profile.cigar_amount*cigarettes_this_month.count).to_i
-      @monthly_saved_cigarettes = (@profile.cigar_amount*cigarettes_this_month.count)-@cigarettes
+      @actual_monthly_cost = (@total_monthly_cigarettes*@profile.box_price/NUMBER_OF_CIGARETTES_IN_A_BOX).to_i
+      @ordinary_monthly_cost = (@profile.box_price/NUMBER_OF_CIGARETTES_IN_A_BOX.to_f*@profile.cigar_amount*monthly_graphs.count).to_i
+      @monthly_saved_cigarettes = (@profile.cigar_amount*monthly_graphs.count)-@total_monthly_cigarettes
       @monthly_saved_money = @ordinary_monthly_cost-@actual_monthly_cost
-      @prolonged_life = ((@profile.cigar_amount.to_f*cigarettes_this_month.count-@cigarettes)*PROLONGED_MINUTES_PER_ONE_CIGARETTE/60).round(1)
+      @monthly_prolonged_life = ((@profile.cigar_amount.to_f*monthly_graphs.count-@total_monthly_cigarettes)*PROLONGED_MINUTES_PER_ONE_CIGARETTE/60).round(1)
     end
   end
 

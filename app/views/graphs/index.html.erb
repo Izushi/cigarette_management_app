@@ -41,7 +41,7 @@
   <h3><%= @month.month %>月の記録</h3>
 
 <ul class="monthly_record">
-  <li class="monthly_list"><i class="fas fa-chevron-circle-right"></i> 今月の合計 <%= @cigarettes %>本</li>
+  <li class="monthly_list"><i class="fas fa-chevron-circle-right"></i> 今月の合計 <%= @total_monthly_cigarettes %>本</li>
 
   <% if @average.nan? %>
     <li class="monthly_list"><i class="fas fa-chevron-circle-right"></i> 1日平均 0本</li>
@@ -55,7 +55,7 @@
     <li class="monthly_list"><i class="fas fa-chevron-circle-right"></i> 今月の我慢したタバコ <%= @monthly_saved_cigarettes %>本</li>
     <li class="monthly_list"><i class="fas fa-chevron-circle-right"></i> 今月の出費 <%= @actual_monthly_cost %>円</li>
     <li class="monthly_list"><i class="fas fa-chevron-circle-right"></i> 今月の節約した金額 <%= @monthly_saved_money %>円</li>
-    <li class="monthly_list"><i class="fas fa-chevron-circle-right"></i> 今月の延びた寿命 <%= @prolonged_life %>時間</li>
+    <li class="monthly_list"><i class="fas fa-chevron-circle-right"></i> 今月の延びた寿命 <%= @monthly_prolonged_life %>時間</li>
   <% end %>
 </ul>
 

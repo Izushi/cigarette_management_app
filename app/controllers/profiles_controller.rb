@@ -1,8 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: %i[edit update destroy]
 
-
-
   def index
     @profile = current_user.profiles.last
     if @profile.nil?

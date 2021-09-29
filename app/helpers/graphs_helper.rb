@@ -6,14 +6,14 @@ module GraphsHelper
   end
 
   # 取得した時刻が含まれる月の範囲のgraphsテーブルのデータを取得
-  def cigarettes_this_month
+  def monthly_graphs
     current_user.graphs.where(date: month.all_month)
   end
 
   # 月の合計喫煙本数
-  def sum_cigarette_this_month
+  def total_monthly_cigarettes
     sum = 0
-    cigarettes_this_month.each { |n| sum += n.cigarette }
+    monthly_graphs.each { |n| sum += n.cigarette }
     sum
   end
 end
