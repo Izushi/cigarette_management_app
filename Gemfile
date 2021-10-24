@@ -80,6 +80,12 @@ group :development do
 
   gem 'pry-byebug'
 
+  gem "capistrano"
+  gem "capistrano-rails"
+  gem 'capistrano-rbenv'
+  gem 'capistrano-rbenv-vars'
+  gem 'capistrano3-puma'
+
 end
 
 
