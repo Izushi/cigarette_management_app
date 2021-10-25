@@ -4,6 +4,12 @@
 
 ## URL
 
+### AWS
+
+http://tobacco-manager.com
+
+### Heroku
+
 https://cigarette-manager.herokuapp.com
 
 トップページのゲストログインボタンを押すとサインインせず閲覧可能
@@ -39,6 +45,11 @@ https://cigarette-manager.herokuapp.com
 このようなプロセスはどのようなサービスを開発するにも共通する点であり実務でも活きる良い経験になりました。
 
 ## 工夫した点
+
+**インフラ**
+
+- Heroku でのデプロイの際は実開発を意識し、GitHub からステージング環境へ自動デプロイできるよう設定した
+- AWS（VPC・EC2・RDS・IAM・Route53）でデプロイした
 
 **全体**
 
@@ -79,7 +90,7 @@ https://cigarette-manager.herokuapp.com
 - フレームワーク：Ruby on Rails (5.2.4)
 - フロントエンド：HTML/Scss/JavaScript
 - DB：PostgreSQL
-- インフラ：Heroku
+- インフラ：Heroku/AWS（VPC・EC2・RDS・IAM・Route53）
 - ソースコード管理：GitHub
 - 開発環境：MacOS/Visual Studio Code
 
@@ -180,5 +191,5 @@ https://cigarette-manager.herokuapp.com
 ## 追加予定の機能
 
 - 目標設定機能
-- AWS S3 を画像の保存先として設定
+- AWS（AMC・ALB・S3・CloudFront）
 - テスト（RSpec）
