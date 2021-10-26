@@ -1,4 +1,5 @@
 class CigarInfosController < ApplicationController
+  # 格アクションで共通の処理をset_cigarinfoで定義しbefore_actionで呼び出す
   before_action :set_cigarinfo, only: [:show, :edit, :update, :destroy]
 
   def index

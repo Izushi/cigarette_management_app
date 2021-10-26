@@ -20,7 +20,7 @@ class GraphsController < ApplicationController
   end
 
   def create
-    @graph = current_user.graphs.build(graph_params)
+    @graph = current_user.graphs.new(graph_params)
     date = @graph.date.strftime("%Y/%-m/%-d")
     if @graph.save
       flash[:notice] = "#{date}の記録を追加しました"

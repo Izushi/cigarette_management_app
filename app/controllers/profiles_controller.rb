@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+  # 格アクションで共通の処理をset_profileで定義しbefore_actionで呼び出す
   before_action :set_profile, only: %i[edit update destroy]
 
   def index

@@ -9,6 +9,7 @@ class CigarInfo < ApplicationRecord
   mount_uploader :img, ImgUploader
 
   private
+  # 最新のスマホに対応した画像サイズ
   def img_size
     if img.size > 5.megabyte
       errors.add(:img, "が5MB以上です")
